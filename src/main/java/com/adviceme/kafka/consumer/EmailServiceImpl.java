@@ -17,9 +17,9 @@ public class EmailServiceImpl{
     public void sendSimpleMessage(User msg) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom("noreply@baeldung.com");
-        message.setTo("abboushimohmmad@gmail.com");
+        message.setTo(msg.email());
         message.setSubject("Sing up successfully");
-        message.setText("Welcome to our application, " + msg.firstName() + " " + msg.fullName());
+        message.setText("Thanks to sign up to our application, " + msg.firstName() + " " + msg.lastName());
         emailSender.send(message);
     }
 
